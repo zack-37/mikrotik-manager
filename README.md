@@ -88,9 +88,9 @@ cd mikrotik-manager
 
 ```yaml
 services:
-  awg-web:
+  mikrotik-manager:
     build: .
-    container_name: mikrotik-awg-manager
+    container_name: mikrotik-manager
     ports:
       - "5000:5000"
     restart: unless-stopped
