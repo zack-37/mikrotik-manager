@@ -1,0 +1,9 @@
+services:
+  awg-web:
+    build: .
+    container_name: mikrotik-awg-manager
+    ports:
+      - "5000:5000"
+    restart: unless-stopped
+    environment:
+      - SECRET_KEY=your-secret-key-here

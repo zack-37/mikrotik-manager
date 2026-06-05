@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% block title_suffix %} — Вход{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center mt-5">
+  <div class="col-sm-10 col-md-6 col-lg-4">
+    <div class="card shadow-sm">
+      <div class="card-header py-3">
+        <h5 class="mb-0"><i class="bi bi-shield-lock me-2"></i>Подключение к MikroTik</h5>
+      </div>
+      <div class="card-body p-4">
+        {% if error %}
+        <div class="alert alert-danger d-flex align-items-center py-2" role="alert">
+          <i class="bi bi-exclamation-triangle-fill me-2"></i>
+          <small>{{ error }}</small>
+        </div>
+        {% endif %}
+
+        <form method="post" autocomplete="off">
+          <div class="mb-3">
+            <label class="form-label text-secondary small">Адрес</label>
+            <input type="text" name="host" class="form-control"
+                   placeholder="192.168.88.1" required autofocus
+                   value="{{ request.form.get('host','') }}">
+          </div>
+          <div class="mb-3">
+            <label class="form-label text-secondary small">SSH порт</label>
+            <input type="number" name="port" class="form-control"
+                   placeholder="22" value="{{ request.form.get('port','22') }}">
+          </div>
+          <div class="mb-3">
+            <label class="form-label text-secondary small">Логин</label>
+            <input type="text" name="user" class="form-control"
+                   placeholder="admin" required
+                   value="{{ request.form.get('user','') }}">
+          </div>
+          <div class="mb-4">
+            <label class="form-label text-secondary small">Пароль</label>
+            <input type="password" name="password" class="form-control"
+                   placeholder="••••••••" required>
+          </div>
+          <button type="submit" class="btn btn-primary w-100">
+            <i class="bi bi-plug-fill me-2"></i>Подключиться
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
