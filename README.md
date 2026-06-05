@@ -80,8 +80,8 @@ AmneziaWG-туннели в последнее время нередко пер�
 ### Docker (рекомендуется)
 
 ```bash
-git clone https://github.com/zack-37/mikrotik-awg-manager
-cd mikrotik-awg-manager
+git clone https://github.com/zack-37/mikrotik-manager
+cd mikrotik-manager
 ```
 
 Отредактируйте `docker-compose.yml.example` — уберите расширение ".example", и смените `SECRET_KEY`:
